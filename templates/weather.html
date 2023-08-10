@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast for Washington, D.C.</h1>
+<h2>Hourly Data:</h2>
+<table border="1">
+    <tr>
+        <th>Time</th>
+        <th>Temperature (F)</th>
+        <th>Apparent Temperature (F)</th>
+        <th>Precipitation Probability (%)</th>
+        <th>Precipitation</th>
+    </tr>
+    {% for index in range(time|length) %}
+    <tr>
+        <td>{{ time[index] }}</td>
+        <td>{{ temperature_2m[index] }}</td>
+        <td>{{ apparent_temperature[index] }}</td>
+        <td>{{ precipitation_probability[index] }}</td>
+        <td>{{ precipitation[index] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<h2>Daily Data:</h2>
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Max Temperature (F)</th>
+        <th>Min Temperature (F)</th>
+    </tr>
+    {% for index in range(daily_data['time']|length) %}
+    <tr>
+        <td>{{ daily_data['time'][index] }}</td>
+        <td>{{ daily_data['temperature_2m_max'][index] }}</td>
+        <td>{{ daily_data['temperature_2m_min'][index] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
