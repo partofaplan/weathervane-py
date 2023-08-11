@@ -13,10 +13,6 @@ PARAMS = {
     "timezone": "America/Chicago"
 }
 
-# ... (previous imports and code) ...
-
-# ... (previous imports and code) ...
-
 @app.route('/')
 def get_weather():
     response = requests.get(API_URL, params=PARAMS)
