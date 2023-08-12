@@ -10,17 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: kciter/aws-ecr-action@master
-      env:
-        AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID}}
       with:
         # The AWS access key id
-        access_key_id: $AWS_ACCESS_KEY
+        access_key_id: ${{ secrets.AWS_ACCESS_KEY }}
         # The AWS secret access key
-        secret_access_key: $AWS_SECRET_ACCESS_KEY
+        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         # AWS Account ID
-        account_id: $AWS_ACCOUNT_ID
+        account_id: ${{ secrets.AWS_ACCOUNT_ID}}
         # Name of your ECR repository
         repo: weathervane
         # The AWS region
