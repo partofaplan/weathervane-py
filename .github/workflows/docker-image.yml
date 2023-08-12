@@ -11,6 +11,7 @@ jobs:
     steps:
     - uses: kciter/aws-ecr-action@master
       with:
+        context: .
         # The AWS access key id
         access_key_id: ${{ secrets.AWS_ACCESS_KEY }}
         # The AWS secret access key
@@ -26,4 +27,4 @@ jobs:
         # Set this to true to set a policy on the repository
         set_repo_policy: false
         dockerfile: Dockerfile
-        path: ../
+        path: .
