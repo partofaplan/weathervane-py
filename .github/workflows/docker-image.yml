@@ -25,3 +25,4 @@ jobs:
         create_repo: false
         # Set this to true to set a policy on the repository
         set_repo_policy: false
+        dockerfile: Dockerfile
