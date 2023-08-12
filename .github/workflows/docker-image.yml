@@ -1,4 +1,4 @@
-name: AWS ECR
+name: Docker build and push
   # You may pin to the exact commit or the version.
   # uses: kciter/aws-ecr-action@79255b7c5aa03dbf6d7c46cff2bfd049874cd98d
 on:
@@ -9,7 +9,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-    - uses: kciter/aws-ecr-action@v4
+    - uses: kciter/aws-ecr-action@master
       env:
         AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
