@@ -2,34 +2,22 @@
   # You may pin to the exact commit or the version.
   # uses: kciter/aws-ecr-action@79255b7c5aa03dbf6d7c46cff2bfd049874cd98d
   uses: kciter/aws-ecr-action@v4
+  env:
+    AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID}}
   with:
     # The AWS access key id
-    access_key_id: 
+    access_key_id: $AWS_ACCESS_KEY
     # The AWS secret access key
-    secret_access_key: 
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
     # AWS Account ID
-    account_id: 
-    # A role to assume under the account_id account.
-    assume_role: # optional, default is 
+    account_id: $AWS_ACCOUNT_ID
     # Name of your ECR repository
-    repo: 
+    repo: weathervane
     # The AWS region
-    region: 
+    region: us-east-2
     # Set this to true to create the repository if it does not already exist
-    create_repo: # optional
+    create_repo: false
     # Set this to true to set a policy on the repository
-    set_repo_policy: # optional
-    # Set this to repository policy statement json file. only used if the set_repo_policy is set to true
-    repo_policy_file: # optional, default is repo-policy.json
-    # Comma-separated string of ECR image tags
-    tags: # optional, default is latest
-    # Name of Dockerfile to use
-    dockerfile: # optional, default is Dockerfile
-    # Extra flags to pass to docker build (see docs.docker.com/engine/reference/commandline/build)
-    extra_build_args: # optional, default is 
-    # Images to use as cache for the docker build (see `--cache-from` argument docs.docker.com/engine/reference/commandline/build)
-    cache_from: # optional, default is 
-    # Path to Dockerfile, defaults to the working directory
-    path: # optional, default is .
-    # Relative path from top-level to script to run before Docker build
-    prebuild_script: # optional
+    set_repo_policy: false
