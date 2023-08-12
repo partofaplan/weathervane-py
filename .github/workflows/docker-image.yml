@@ -9,6 +9,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - uses: kciter/aws-ecr-action@master
       with:
         # The AWS access key id
@@ -25,4 +26,3 @@ jobs:
         create_repo: false
         # Set this to true to set a policy on the repository
         set_repo_policy: false
-        dockerfile: weathervane-py/Dockerfile
