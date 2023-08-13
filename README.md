@@ -10,6 +10,8 @@ The app has a Dockerfile and can be containerized using `docker build .`.
 ## Helm
 The Helm build deploys the app to the current K8s cluster from my ECR repo.
 
+Can be deployed using `helm upgrade --install weathervane weathervane-py-charts/`
+
 ## Github Action
 A Github action builds the Dockerfile and pushes it to the ECR repo. 
 
